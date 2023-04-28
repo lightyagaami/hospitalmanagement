@@ -1,5 +1,3 @@
-![icon_logo](https://i.ibb.co/RpXT993/icon-logo.png)
-
 
 
 Application de gestion et management d'hopital
@@ -39,4 +37,6 @@ Application de gestion et management d'hopital
 - Vous devez installé PyQt5 sur votre ordinateur `pip install pyqt5`
 - Aller dans le dossier du projet : `cd '.\HOSPITAL MANAGMENT SYSTEM\'`
 - Installez les dépendances du projet en exécutant `py -m pip install -r requirements.txt`.
+- Telecharger WampServer
+- Importer la base de donnée "hospita_system.sql" dans phpmyadmin
 - Lancer l'application avec la commande suivante : `python main.py`
