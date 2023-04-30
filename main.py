@@ -9,16 +9,12 @@ from controllers.controller import LoginController
 if __name__ == "__main__":
     # creation d'une instance de l'app
     app = QApplication(sys.argv)
-
     # Chargement des models
     model = ()
     # Chargement du controller
     controller = LoginController()
     # Chargement de la premiere vue de l'app
     view = HomeWindow(LoginController)
-
     # affichage de la vue par defaut de notre app car cela est masqué par defaut
     view.show()
-
     sys.exit(app.exec())
-

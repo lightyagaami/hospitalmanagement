@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QTableWidget, QTableWidgetItem
 import sys
 
+
 class AppointmentView(QWidget):
     def __init__(self, doctor, appointments):
         super().__init__()
@@ -51,4 +52,3 @@ if __name__ == '__main__':
     appointment_view = AppointmentView(doctor, appointments)
     appointment_view.show()
     sys.exit(app.exec_())
-

@@ -1,15 +1,16 @@
-from PyQt5.QtWidgets import QDialog, QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton,QSpacerItem
+from PyQt5.QtWidgets import QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton, QSpacerItem
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 from controllers.database.user_controller import User
-from views.popupInscripton import  TestDialog
+from views.popupInscripton import TestDialog
+
 
 class MainWindow(QMainWindow):
     def __init__(self, Controller):
         super().__init__()
         self.controller = Controller
         self.setWindowTitle("IIT HEALTH CENTER")
-        self.showMaximized() 
+        self.showMaximized()
 
         # Container 1
         container1 = QWidget()
@@ -57,16 +58,16 @@ class MainWindow(QMainWindow):
                 font-weight: bold;
                 padding: 10px;
             }
-            
+
             QPushButton:hover {
                 background-color: #B30000;
             }
-            
+
             QPushButton:pressed {
                 background-color: #800000;
             }
         """)
-        button.clicked.connect(lambda:User.loginUser(self))
+        button.clicked.connect(lambda: User.loginUser(self))
 
         # Ajouter un layout vertical pour le container1
         container1_layout = QVBoxLayout()
@@ -96,9 +97,9 @@ class MainWindow(QMainWindow):
         main_container.setLayout(container_layout)
 
         self.setCentralWidget(main_container)
-        self.log = {'adjetey@gmail.com': 'password1', 'jaber@gmail.com': 'password2', 'moh@gmail.com': 'password3', 'gode@gmail.com': 'password4', 'max@gmail.com': 'password5'}
-    
-        
+        self.log = {'adjetey@gmail.com': 'password1', 'jaber@gmail.com': 'password2',
+                    'moh@gmail.com': 'password3', 'gode@gmail.com': 'password4', 'max@gmail.com': 'password5'}
+
     def show_test_dialog(self, event):
         self.test_dialog = TestDialog()
         self.test_dialog.show()

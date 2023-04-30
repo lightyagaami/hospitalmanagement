@@ -1,7 +1,8 @@
-from PyQt5.QtWidgets import QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton, QSpacerItem
+from PyQt5.QtWidgets import QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QGridLayout
+
 
 class DoctorLoginPage(QMainWindow):
     def __init__(self, Controller):
@@ -65,7 +66,7 @@ class DoctorLoginPage(QMainWindow):
 
         if username in self.credentials and self.credentials[username] == password:
             # Rediriger vers la page du docteur
-            self.close()
+            # self.close()
             self.doctor_page = DoctorLoginPage(Controller=self.controller)
             self.doctor_page.show()
         else:
@@ -74,4 +75,3 @@ class DoctorLoginPage(QMainWindow):
             error_label.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
             error_label.setStyleSheet("color: red;")
             self.container1_layout.addWidget(error_label)
-

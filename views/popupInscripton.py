@@ -1,8 +1,9 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QPixmap
-from PyQt5.QtWidgets import QDialog, QDialogButtonBox, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget, QApplication
+from PyQt5.QtWidgets import QDialog, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QApplication
 from controllers.database.user_controller import User
 from views.appointmentWindow import AppointmentWindow
+
 
 class TestDialog(QDialog):
     def __init__(self, parent=None):
@@ -37,7 +38,7 @@ class TestDialog(QDialog):
         # Créer des boutons pour soumettre ou annuler le processus d'enregistrement
         submit_btn = QPushButton('S\'inscrire')
         submit_btn.setStyleSheet("background-color: red; color: white;")
-        
+
         cancel_btn = QPushButton('Annuler')
         cancel_btn.setStyleSheet("background-color: black; color: white;")
 
@@ -72,7 +73,6 @@ class TestDialog(QDialog):
         layout.addLayout(input_layout)
         layout.addLayout(button_layout)
 
-
         # Définir la taille et le style de la police pour toutes les étiquettes et tous les champs de saisie
         font = QFont()
         font.setPointSize(14)
@@ -87,13 +87,13 @@ class TestDialog(QDialog):
         self.setWindowFlag(Qt.WindowContextHelpButtonHint, False)
         self.move(QApplication.desktop().screen().rect().center() - self.rect().center())
 
-         # Connecter le bouton Soumettre à la fonction d'ouverture de la fenêtre de rendez-vous
+        # Connecter le bouton Soumettre à la fonction d'ouverture de la fenêtre de rendez-vous
         # submit_btn.clicked.connect(self.open_appointment_window)
         submit_btn.clicked.connect(lambda: User.insertData(self))
 
         # Connecter le bouton Annuler à la fonction de fermeture de la fenêtre
         cancel_btn.clicked.connect(self.reject)
-        
+
     def open_appointment_window(self):
         # Créer une instance de la fenêtre de rendez-vous et l'afficher
         self.appointmentwindow = AppointmentWindow(self)

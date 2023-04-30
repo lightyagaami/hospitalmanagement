@@ -1,15 +1,15 @@
-from PyQt5.QtWidgets import QComboBox, QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QLineEdit, QPushButton,QSpacerItem
+from PyQt5.QtWidgets import QMainWindow, QLabel, QVBoxLayout, QHBoxLayout, QWidget,  QPushButton
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QGridLayout
 
-import sys
 
 from views.view import MainWindow
 from views.doctorLogin import DoctorLoginPage
 
+
 class HomeWindow(QMainWindow):
-    def __init__(self,Controller):
+    def __init__(self, Controller):
         super().__init__()
         self.controller = Controller
         self.setWindowTitle("HOSPITAL MANAGEMENT")
@@ -19,7 +19,7 @@ class HomeWindow(QMainWindow):
         container1.setFixedHeight(400)
         container1.setFixedWidth(400)
 
-            # Ajouter une étiquette
+        # Ajouter une étiquette
         label = QLabel('Vous êtes :')
         font = QFont('Arial', 20)
         label.setFont(font)
@@ -81,4 +81,3 @@ class HomeWindow(QMainWindow):
     def on_administrateur_button_clicked(self):
         # TODO : Ajouter la fonctionnalité pour l'administrateur
         pass
-

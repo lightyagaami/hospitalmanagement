@@ -6,11 +6,13 @@ class Users():
         self.address = address
         self.numero_telephone = numero_telephone
 
+
 class Doctor():
     def __init__(self, nom, specialite):
         self.id = None  # Nouvelle colonne "id"
         self.nom = nom
         self.specialite = specialite
+
 
 class Appointment:
     def __init__(self, patient, docteur, date, heure):
@@ -19,5 +21,3 @@ class Appointment:
         self.docteur = docteur
         self.date = date
         self.heure = heure
-
-

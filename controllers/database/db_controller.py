@@ -1,9 +1,10 @@
-import MySQLdb as mbd 
+import MySQLdb as mbd
 
-class db(): 
+
+class db():
     def createConnection(self):
         try:
-            conn = mbd.connect('localhost','root','','hospita_system')
+            conn = mbd.connect('localhost', 'root', '', 'hospita_system')
             return conn
-        except mbd.Error as e:
-            print ("error connexion")
+        except mbd.Error:
+            print("error connexion")
